@@ -640,13 +640,18 @@ function handleGlobalSearch(rawTerm) {
 
 function updateSearchPlaceholder(sectionId) {
     const input = $('#searchInput');
-    if (!input) return;
-    if (sectionId === 'products') {
-        input.placeholder = '🔍 ค้นหาเมนู...';
-    } else if (sectionId === 'customers') {
-        input.placeholder = '🔍 ค้นหาลูกค้า...';
-    } else {
-        input.placeholder = '🔍 ค้นหาเมนู...';
+    const header = $('.header');
+    if (input) {
+        if (sectionId === 'products') {
+            input.placeholder = '🔍 ค้นหาเมนู...';
+        } else if (sectionId === 'customers') {
+            input.placeholder = '🔍 ค้นหาลูกค้า...';
+        } else {
+            input.placeholder = '🔍 ค้นหาเมนู...';
+        }
+    }
+    if (header) {
+        header.classList.toggle('hidden', sectionId === 'reports' || sectionId === 'settings');
     }
 }
 

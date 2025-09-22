@@ -114,6 +114,10 @@ body {
   border: 2px solid #ffcc80;
 }
 
+.header.hidden {
+  display: none;
+}
+
 .search-box {
   position: relative;
   width: 350px;
